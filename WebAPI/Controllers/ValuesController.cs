@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace WebAPI.Controllers
 {
@@ -21,6 +22,17 @@ namespace WebAPI.Controllers
         public string Get(int id)
         {
             return "value";
+        }
+
+        [HttpGet("getlist")]
+        public List<string> GetList()
+        {
+            List<string> tempList = new List<string>()
+            {
+                "Araba", "Kitap", "Otobüs", "Tren"
+            };
+
+            return tempList;
         }
 
         // POST api/values
